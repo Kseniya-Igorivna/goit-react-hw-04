@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styles from "./SearchBar.module.css";
 import { FaSearch } from "react-icons/fa";
+import { toast } from "react-hot-toast";
 
 export default function SearchBar({ onSubmit }) {
   const [input, setInput] = useState("");
@@ -12,6 +13,7 @@ export default function SearchBar({ onSubmit }) {
   const handleSubmit = e => {
     e.preventDefault();
     if (input.trim() === "") {
+      toast.error("Please enter a search query.");
       return;
     }
     onSubmit(input);

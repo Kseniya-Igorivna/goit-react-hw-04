@@ -11,7 +11,13 @@ export default function ImageGallery({ images, onImageClick }) {
             onImageClick(image.urls.regular, image.alt_description)
           }
         >
-          <ImageCard src={image.urls.small} alt={image.alt_description} />
+          <ImageCard
+            src={image.urls.small}
+            alt={image.alt_description}
+            onClick={() =>
+              onImageClick(image.urls.regular, image.alt_description)
+            }
+          />
         </li>
       ))}
     </ul>
