@@ -5,14 +5,18 @@ ReactModal.setAppElement("#root");
 
 export default function ImageModal({ isOpen, onRequestClose, src, alt }) {
   return (
-    <Modal
+    <ReactModal
       isOpen={isOpen}
       onRequestClose={onRequestClose}
       contentLabel="Image Modal"
       className={styles.modal}
       overlayClassName={styles.overlay}
+      shouldCloseOnOverlayClick={true}
+      shouldCloseOnEsc={true}
     >
-      <img src={src} alt={alt} className={styles.image} />
-    </Modal>
+      <div className={styles.modalContent}>
+        <img src={src} alt={alt} className={styles.image} />
+      </div>
+    </ReactModal>
   );
 }

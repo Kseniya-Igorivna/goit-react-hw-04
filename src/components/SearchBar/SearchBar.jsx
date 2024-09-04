@@ -20,6 +20,9 @@ export default function SearchBar({ onSubmit }) {
   return (
     <header className={styles.searchBar}>
       <form className={styles.form} onSubmit={handleSubmit}>
+        <button type="submit" className={styles.button}>
+          <FaSearch />
+        </button>
         <input
           type="text"
           className={styles.input}
@@ -29,9 +32,6 @@ export default function SearchBar({ onSubmit }) {
           autoComplete="off"
           autoFocus
         />
-        <button type="submit" className={styles.button}>
-          Search
-        </button>
       </form>
     </header>
   );

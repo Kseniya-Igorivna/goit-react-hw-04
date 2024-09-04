@@ -7,11 +7,14 @@ import Loader from "../Loader/Loader";
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
 import LoadMoreBtn from "../LoadMoreBtn/LoadMoreBtn";
 import ImageModal from "../ImageModal/ImageModal";
+import Modal from "react-modal";
 
 const API_KEY = "z1yhqPetuRaXidnnfr8ElUmDlqWZxF_ZnRB_-hA1d1A";
 const BASE_URL = "https://api.unsplash.com/search/photos";
 
 export default function App() {
+  Modal.setAppElement("#root");
+
   const [images, setImages] = useState([]);
   const [query, setQuery] = useState("");
   const [loading, setLoading] = useState(false);
