@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "./SearchBar.module.css";
+import { FaSearch } from "react-icons/fa";
 
 export default function SearchBar({ onSubmit }) {
   const [input, setInput] = useState("");
@@ -11,7 +12,6 @@ export default function SearchBar({ onSubmit }) {
   const handleSubmit = e => {
     e.preventDefault();
     if (input.trim() === "") {
-      // Notify user
       return;
     }
     onSubmit(input);
